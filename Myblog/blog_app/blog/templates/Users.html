@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h6>Tableau</h6>
+    <table>
+        <thead>
+            <th>NOM</th>
+            <th>EMAIL</th>
+            <th>MODIFIER</th>
+            <th>SUPRIMER</th>
+        </thead>
+        {% for data in users %}
+         <tr>
+             <td>{{data.username}}</td>
+             <td>{{data.email}}</td>
+             <td><button><a href="modify/{{data.id}}">Modifier</a></button></td>
+             <td><button><a href="supprimer/{{data.id}}">Suprimer</a></button></td>
+         </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
